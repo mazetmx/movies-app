@@ -15,6 +15,10 @@ export class MovieService {
     return this.http.get<{ movie: Movie }>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
   }
 
+  getMoviesByTitle(title: string) {
+    return this.http.get<{ movies: Movie[] }>(`${this.baseUrl}/search/movie?query=${title}&api_key=${this.apiKey}&language=en-US&page=1&include_adult=false`);
+  }
+
   getNowPlayingMovies(pgNum: number) {
     return this.http.get<{ movies: Movie[] }>(`${this.baseUrl}/movie/now_playing?api_key=${this.apiKey}${this.options}&page=${pgNum}`);
   }

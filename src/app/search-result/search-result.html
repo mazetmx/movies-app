@@ -1,0 +1,15 @@
+<div class="position-fixed gradient-custom w-100 h-100">
+</div>
+
+<navbar></navbar>
+
+<div class="container">
+  <div class="row row-cols-3">
+    @for (m of movies; track m.id) {
+      <movie-card
+        [movie]="m"
+      >
+      </movie-card>
+    }
+  </div>
+</div>
