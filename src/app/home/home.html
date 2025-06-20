@@ -1,4 +1,9 @@
-<navbar></navbar>
+<div class="position-fixed gradient-custom w-100 h-100">
+</div>
+
+<navbar
+  [watchlistCount]="this.watchListService.count()"
+></navbar>
 
 <div class="container">
   <div class="row row-cols-3">
