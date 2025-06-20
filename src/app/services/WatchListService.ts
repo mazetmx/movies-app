@@ -27,4 +27,8 @@ export class WatchListService {
   contains(id: string) {
     return this.getWatchListIds().includes(id);
   }
+
+  count() {
+    return this.getWatchListIds().length;
+  }
 }

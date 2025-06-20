@@ -11,7 +11,10 @@
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="" class="nav-link px-2 text-white fw-bold">Home</a></li>
-        <li><a href="/watchlist" class="nav-link px-2 text-white fw-bold">WatchList</a></li>
+        <li class="position-relative">
+          <span class="position-absolute start-100 rounded-pill text-bg-danger badge translate-middle">{{watchlistCount}}</span>
+          <a href="/watchlist" class="nav-link px-2 text-white fw-bold">WatchList</a>
+        </li>
       </ul>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
