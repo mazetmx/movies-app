@@ -11,6 +11,10 @@ export class MovieService {
 
   constructor(private http: HttpClient) {}
 
+  getMovieById(id: string) {
+    return this.http.get<{ movie: Movie }>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
+  }
+
   getNowPlayingMovies(pgNum: number) {
     return this.http.get<{ movies: Movie[] }>(`${this.baseUrl}/movie/now_playing?api_key=${this.apiKey}${this.options}&page=${pgNum}`);
   }
