@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 // Components
+import { Navbar } from '../navbar/navbar';
 import { MovieCard } from '../movie-card/movie-card';
 
 // Models
@@ -11,14 +12,14 @@ import { MovieService } from '../services/MovieService';
 
 @Component({
   selector: 'home',
-  imports: [MovieCard],
+  imports: [MovieCard, Navbar],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
   movies: Movie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  private movieService = inject(MovieService);
 
   ngOnInit() {
     this.movieService.getNowPlayingMovies(1).subscribe((response: any) => {
