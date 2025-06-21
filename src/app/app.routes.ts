@@ -5,10 +5,12 @@ import { Home } from './home/home';
 import { MovieDetails } from './movie-details/movie-details';
 import { WatchList } from './watch-list/watch-list';
 import { SearchResult } from './search-result/search-result';
+import { NotFound } from './not-found/not-found';
 
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'movie/:id', component: MovieDetails },
   { path: 'watchlist', component: WatchList},
-  { path: 'search/:term', component: SearchResult}
+  { path: 'search/:term', component: SearchResult},
+  { path: '**', component: NotFound}
 ];
